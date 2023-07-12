@@ -8,6 +8,11 @@ class Item
     @archived = archived
   end
 
+  def add_author(author)
+    @author = author
+    author.items << self unless author.items.include?(self)
+  end
+
   def move_to_archive()
     return unless can_be_archived?
 
