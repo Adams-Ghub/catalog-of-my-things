@@ -21,7 +21,6 @@ describe Game do
     end
   end
 
-
   context 'can be archived if' do
     it 'published date > 10 years and last played date is > 2 years' do
       expect(@game4.can_be_archived?).to be true

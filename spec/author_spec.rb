@@ -1,7 +1,6 @@
 require './author'
 require './item'
 
-
 describe Author do
   before :all do
     @item = Item.new('2020-09-19')
