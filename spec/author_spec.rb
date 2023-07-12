@@ -10,7 +10,6 @@ describe Author do
   end
 
   it 'can be added to item class' do
-    
     expect(@author.items).to include(@item)
   end
 end
