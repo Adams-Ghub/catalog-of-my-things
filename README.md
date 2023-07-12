@@ -93,12 +93,11 @@ To run tests, run the following command:
 ## 👥 Authors <a name="authors"></a>
 
 👤 **Adams Bamfo**
-
 - GitHub: [Adams-Ghub](https://github.com/Adams-Ghub)
 - Twitter: [@bamfoaf](https://twitter.com/bamfoaf)
 - LinkedIn: [Adams Bamfo](https://www.linkedin.com/in/adams-bamfo/)
-👤 **Abdi Bekele**
 
+👤 **Abdi Bekele**
 - GitHub: [@Lul-Abdifan](https://github.com/Lul-Abdifan)
 - Twitter: [@twitterhandle](https://twitter.com/AbdiBekele68808)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/abdi-bekele-a63860254/)
