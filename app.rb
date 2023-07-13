@@ -14,7 +14,6 @@ class App
   def create_book
     publisher = ''
     cover_state = ''
-    published_date = ''
 
     loop do
       print 'Enter a book publisher:'
@@ -28,9 +27,7 @@ class App
       break unless cover_state.empty?
     end
 
-    
-      published_date = get_date_input('Enter published date [YYYY-MM-DD]')
-  
+    published_date = get_date_input('Enter published date [YYYY-MM-DD]')
 
     @books << Book.new(publisher, cover_state, published_date)
     puts "\nBook is created successfully\n\n"
@@ -111,7 +108,8 @@ class App
       puts 'No Book available'
     else
       @books.each_with_index do |book, index|
-        puts "[#{index + 1}] Publisher: #{book.publisher}, Cover_state :#{book.cover_state}, Published Date:#{book.publish_date}"
+        puts "[#{index + 1}] Publisher: #{book.publisher}, Cover_state :#{book.cover_state}\
+        , Published Date:#{book.publish_date}"
       end
     end
   end
@@ -155,14 +153,8 @@ class App
       list_all_books
     when 6
       list_all_labels
-    when 7
-      list_all_authors
     when 9
       create_book
-    when 10
-      create_author
-    when 13
-      create_game
     when 14
       create_label
     end

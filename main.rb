@@ -8,7 +8,7 @@ def main
     options.choices
     puts 'Enter an option'
     input = gets.chomp.to_i
-    break if input.zero? || input > 13
+    break if input.zero? || input > 14
 
     app.executors(input)
   end
