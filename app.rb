@@ -8,13 +8,13 @@ class App
   end
 
   def list_all_games
-    if@games.empty?
-        puts "No games available."
+    if @games.empty?
+      puts 'No games available.'
     else
-        @games.each_with_index do |game, index|
+      @games.each_with_index do |game, index|
         puts "#{index + 1}) Published date: #{game.publish_date} multiplayer:#{game.multiplayer}\
         last played:#{game.last_played_at}"
-        end
+      end
     end
   end
 
