@@ -1,4 +1,5 @@
-require './game'
+require_relative 'game'
+
 
 describe Game do
   before :all do

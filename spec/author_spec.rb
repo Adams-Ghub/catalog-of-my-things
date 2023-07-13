@@ -1,5 +1,6 @@
-require './author'
-require './item'
+require_relative 'author'
+require_relative 'item'
+
 
 describe Author do
   before :all do
