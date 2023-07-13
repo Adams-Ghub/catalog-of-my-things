@@ -1,11 +1,9 @@
 class MusicAlbum < Item
-  attr_accessor :name, :on_spotify, :genre, :publish_date
+  attr_accessor :on_spotify
 
-  def initialize(name, publish_date, genre, on_spotify)
+  def initialize(publish_date, on_spotify)
     super(publish_date)
     @on_spotify = on_spotify
-    @name = name
-    @genre = genre
   end
 
   def can_be_archived?
