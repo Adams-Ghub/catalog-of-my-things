@@ -57,47 +57,6 @@ class App
     puts "\nLabel is created successfully\n\n"
   end
 
-  def list_all_books
-    if @books.empty?
-      puts 'No Book available'
-    else
-      @books.each_with_index do |book, index|
-        puts "[#{index + 1}] Publisher: #{book.publisher}, Cover_state :#{book.cover_state}, Published Date:#{book.publish_date}"
-      end
-    end
-  end
-
-  def list_all_labels
-    if @labels.empty?
-      puts 'No Label available'
-    else
-      @labels.each_with_index do |label, index|
-        puts "[#{index + 1}] Label Title: #{label.title}, Label Color :#{label.color}"
-      end
-    end
-  end
-
-  def list_all_games
-    if @games.empty?
-      puts 'No games available.'
-    else
-      @games.each_with_index do |game, index|
-        puts "#{index + 1}) Published date: #{game.publish_date} multiplayer:#{game.multiplayer}\
-        last played:#{game.last_played_at}"
-      end
-    end
-  end
-
-  def list_all_authors
-    if @authors.empty?
-      puts 'No authors available'
-    else
-      @authors.each_with_index do |author, index|
-        puts "#{index + 1})  #{author.first_name} #{author.last_name}"
-      end
-    end
-  end
-
   def create_author
     first_name = ''
     last_name = ''
@@ -147,6 +106,47 @@ class App
       puts 'Date format incorrect'
     end
     date_input
+  end
+
+  def list_all_books
+    if @books.empty?
+      puts 'No Book available'
+    else
+      @books.each_with_index do |book, index|
+        puts "[#{index + 1}] Publisher: #{book.publisher}, Cover_state :#{book.cover_state}, Published Date:#{book.publish_date}"
+      end
+    end
+  end
+
+  def list_all_labels
+    if @labels.empty?
+      puts 'No Label available'
+    else
+      @labels.each_with_index do |label, index|
+        puts "[#{index + 1}] Label Title: #{label.title}, Label Color :#{label.color}"
+      end
+    end
+  end
+
+  def list_all_games
+    if @games.empty?
+      puts 'No games available.'
+    else
+      @games.each_with_index do |game, index|
+        puts "#{index + 1}) Published date: #{game.publish_date} multiplayer:#{game.multiplayer}\
+        last played:#{game.last_played_at}"
+      end
+    end
+  end
+
+  def list_all_authors
+    if @authors.empty?
+      puts 'No authors available'
+    else
+      @authors.each_with_index do |author, index|
+        puts "#{index + 1})  #{author.first_name} #{author.last_name}"
+      end
+    end
   end
 
   def executors(choice)
