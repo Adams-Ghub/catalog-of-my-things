@@ -28,11 +28,9 @@ class App
       break unless cover_state.empty?
     end
 
-    loop do
-      print 'Enter published date [YYYY-MM-DD]:'
-      published_date = gets.chomp
-      break unless published_date.empty?
-    end
+    
+      published_date = get_date_input('Enter published date [YYYY-MM-DD]')
+  
 
     @books << Book.new(publisher, cover_state, published_date)
     puts "\nBook is created successfully\n\n"
