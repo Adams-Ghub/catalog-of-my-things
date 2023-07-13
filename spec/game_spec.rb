@@ -1,7 +1,8 @@
-require_relative 'game'
+require 'date'
+require_relative '../item'
+require_relative '../game'
 
-
-describe Game do
+describe 'Game' do
   before :all do
     @game1 = Game.new('2014-09-07', true, '2022-08-07')
     @game2 = Game.new('2010-08-03', false, '2023-06-07')
