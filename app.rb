@@ -57,7 +57,6 @@ class App
       multiplayer_input = gets.chomp
       break if multiplayer_input.downcase == 'y' || multiplayer_input.downcase == 'n'
 
-
       puts 'incorrect input'
     end
 
