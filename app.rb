@@ -1,10 +1,80 @@
 require_relative 'game'
 require_relative 'author'
+require_relative 'book'
+require_relative 'label'
 
 class App
   def initialize
     @games = []
     @authors = []
+    @books = []
+    @labels = []
+  end
+
+  def create_book
+    publisher = ''
+    cover_state = ''
+    published_date = ''
+
+    loop do
+      print 'Enter a book publisher:'
+      publisher = gets.chomp
+      break unless publisher.empty?
+    end
+
+    loop do
+      print 'Enter Cover state:'
+      cover_state = gets.chomp
+      break unless cover_state.empty?
+    end
+
+    loop do
+      print 'Enter published date [YYYY-MM-DD]:'
+      published_date = gets.chomp
+      break unless published_date.empty?
+    end
+
+    @books << Book.new(publisher, cover_state, published_date)
+    puts "\nBook is created successfully\n\n"
+  end
+
+  def create_label
+    title = ''
+    color = ''
+
+    loop do
+      print 'Enter a book title:'
+      title = gets.chomp
+      break unless title.empty?
+    end
+
+    loop do
+      print 'Enter label color:'
+      color = gets.chomp
+      break unless color.empty?
+    end
+    @labels << Label.new(title, color)
+    puts "\nLabel is created successfully\n\n"
+  end
+
+  def list_all_books
+    if @books.empty?
+      puts 'No Book available'
+    else
+      @books.each_with_index do |book, index|
+        puts "[#{index + 1}] Publisher: #{book.publisher}, Cover_state :#{book.cover_state}, Published Date:#{book.publish_date}"
+      end
+    end
+  end
+
+  def list_all_labels
+    if @labels.empty?
+      puts 'No Label available'
+    else
+      @labels.each_with_index do |label, index|
+        puts "[#{index + 1}] Label Title: #{label.title}, Label Color :#{label.color}"
+      end
+    end
   end
 
   def list_all_games
@@ -83,12 +153,20 @@ class App
     case choice
     when 1
       list_all_games
+    when 2
+      list_all_books
+    when 6
+      list_all_labels
     when 7
       list_all_authors
+    when 9
+      create_book
     when 10
       create_author
     when 13
       create_game
+    when 14
+      create_label
     end
   end
 end
