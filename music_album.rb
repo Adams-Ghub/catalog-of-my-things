@@ -1,5 +1,4 @@
 class MusicAlbum < Item
-
   attr_accessor :name, :on_spotify, :genre, :publish_date
 
   def initialize(name, publish_date, genre, on_spotify)
@@ -10,6 +9,6 @@ class MusicAlbum < Item
   end
 
   def can_be_archived?
-    super && on_spotify==true
+    super && on_spotify == true
   end
 end
