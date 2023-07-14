@@ -20,6 +20,6 @@ CREATE TABLE books (
     FOREIGN KEY (label_id) REFERENCES labels(id),
     FOREIGN KEY (genre_id) REFERENCES genres(id),
     FOREIGN KEY (author_id) REFERENCES Author(id),
-    FOREIGN KEY (source_id) REFERENCES source(id),
+    FOREIGN KEY (source_id) REFERENCES Sources(id),
     PRIMARY KEY (id)
 );
