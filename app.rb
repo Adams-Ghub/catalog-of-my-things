@@ -1,3 +1,4 @@
+require 'json'
 require_relative 'game'
 require_relative 'author'
 require_relative 'music_album'
@@ -142,7 +143,7 @@ class App
     else
       @games.each_with_index do |game, index|
         puts "#{index + 1}) Published date: #{game.publish_date} multiplayer:#{game.multiplayer}\
-        last played:#{game.last_played_at}"
+    last played:#{game.last_played_at}"
       end
     end
   end

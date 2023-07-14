@@ -6,7 +6,7 @@ def main
   app.load
 
   options = Options.new
-
+  app.load_all_data
   loop do
     options.choices
     puts 'Enter an option'
