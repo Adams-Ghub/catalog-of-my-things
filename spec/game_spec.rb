@@ -1,6 +1,6 @@
 require 'date'
-require_relative '../item'
-require_relative '../game'
+require_relative '../classes/item'
+require_relative '../classes/game'
 
 describe 'Game' do
   before :all do

@@ -1,4 +1,4 @@
-require_relative '../book'
+require_relative '../classes/book'
 
 describe 'Testing Book' do
   it 'Testing book data' do

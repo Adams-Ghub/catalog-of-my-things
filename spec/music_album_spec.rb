@@ -1,6 +1,6 @@
 require 'date'
-require_relative '../item'
-require_relative '../music_album'
+require_relative '../classes/item'
+require_relative '../classes/music_album'
 
 describe 'Game' do
   before :all do
