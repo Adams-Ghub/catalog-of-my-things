@@ -24,12 +24,14 @@ class App
     load_books
     load_labels
     load_authors_games
+    load_music_albums
   end
 
   def save(_data)
     save_books
     save_label
     save_authors_games
+    save_music_albums
     puts 'You Quited'
   end
 
@@ -71,7 +73,7 @@ class App
       @music_albums.each_with_index do |music_album, index|
         on_spotify = music_album.on_spotify ? 'Yes' : 'No'
         puts "#{index + 1}) Published date: #{music_album.publish_date}   \
-           Is it on Spotify: #{on_spotify}     genre: #{music_album.genre.name}"
+           Is it on Spotify: #{on_spotify}"
       end
     end
   end

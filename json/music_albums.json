@@ -1,0 +1,22 @@
+[
+  {
+    "id": 773,
+    "genre": "afro",
+    "items": [
+      {
+        "publish date": "2000-09-09",
+        "on spotify": true
+      }
+    ]
+  },
+  {
+    "id": 747,
+    "genre": "afu",
+    "items": [
+      {
+        "publish date": "2011-07-12",
+        "on spotify": null
+      }
+    ]
+  }
+]
