@@ -39,3 +39,19 @@ def load_authors_games
     @games << new_game
   end
 end
+
+def load_music_albums
+  return unless File.exist?('./json/music_albums.json')
+
+  json_albums = JSON.parse(File.read('./json/music_albums.json'))
+
+  json_albums.each do |album|
+    new_genre = Genre.new(album['genre'])
+    new_album = MusicAlbum.new(album['items'][0]['publish date'], album['items'][0]['on spotify'])
+    new_genre.add_item(new_album)
+
+    @genres << new_genre
+    @music_albums << new_album
+  end
+end
+
