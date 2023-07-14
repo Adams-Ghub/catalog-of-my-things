@@ -2,6 +2,9 @@ require_relative 'game'
 require_relative 'author'
 require_relative 'book'
 require_relative 'label'
+require_relative 'save'
+require_relative 'load'
+require 'json'
 
 class App
   def initialize
@@ -10,6 +13,19 @@ class App
     @books = []
     @labels = []
   end
+
+  def load
+    load_books  
+    load_labels
+  end
+
+  def save(data)
+    save_books
+    save_label
+    puts "You Quited"
+  end
+
+
 
   def create_book
     publisher = ''
@@ -159,4 +175,5 @@ class App
       create_label
     end
   end
+  
 end
