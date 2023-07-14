@@ -1,3 +1,4 @@
+require 'json'
 require_relative 'game'
 require_relative 'author'
 require_relative 'music_album'
@@ -7,7 +8,6 @@ require_relative 'label'
 require_relative 'save'
 require_relative 'load'
 require_relative 'create_elements'
-require 'json'
 
 class App
   include CreateElements
@@ -23,11 +23,13 @@ class App
   def load
     load_books
     load_labels
+    load_authors_games
   end
 
   def save(_data)
     save_books
     save_label
+    save_authors_games
     puts 'You Quited'
   end
 
@@ -142,7 +144,7 @@ class App
     else
       @games.each_with_index do |game, index|
         puts "#{index + 1}) Published date: #{game.publish_date} multiplayer:#{game.multiplayer}\
-        last played:#{game.last_played_at}"
+    last played:#{game.last_played_at}"
       end
     end
   end

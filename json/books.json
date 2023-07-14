@@ -3,5 +3,10 @@
     "publisher": "ethos",
     "cover_state": "old",
     "publish_date": "2000-09-09"
+  },
+  {
+    "publisher": "shakespere",
+    "cover_state": "good",
+    "publish_date": "2022-09-08"
   }
 ]

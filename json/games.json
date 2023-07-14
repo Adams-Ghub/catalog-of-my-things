@@ -1,0 +1,34 @@
+[
+  {
+    "id": 674,
+    "author": [
+      {
+        "first name": "Adams",
+        "last name": "Bamfo"
+      }
+    ],
+    "items": [
+      {
+        "publish_date": "2002-04-05",
+        "multiplayer": false,
+        "last_played_at": "2002-04-06"
+      }
+    ]
+  },
+  {
+    "id": 643,
+    "author": [
+      {
+        "first name": "John ",
+        "last name": "Legend"
+      }
+    ],
+    "items": [
+      {
+        "publish_date": "2003-04-05",
+        "multiplayer": false,
+        "last_played_at": "2002-04-05"
+      }
+    ]
+  }
+]
