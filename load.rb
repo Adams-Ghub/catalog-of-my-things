@@ -54,4 +54,3 @@ def load_music_albums
     @music_albums << new_album
   end
 end
-

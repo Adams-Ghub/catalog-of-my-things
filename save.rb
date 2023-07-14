@@ -44,7 +44,7 @@ def save_music_albums
   end
   updated_data = @genres.map do |album|
     related_items = album.items.map do |album_item|
-      { 
+      {
         'publish date': album_item.publish_date,
         'on spotify': album_item.on_spotify
       }
