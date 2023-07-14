@@ -6,6 +6,6 @@ class Options
     puts '4. List all movies        5. List all genres          6. List all labels '
     puts '7. List all authors       8. List all sources         9. Add a book'
     puts '10. Add an author         11. Add a music album       12. Add a movie'
-    puts '13. Add a game'
+    puts '13. Add a game            14.Add a Label              [0] Quit'
   end
 end
