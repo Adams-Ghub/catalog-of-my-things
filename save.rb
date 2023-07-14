@@ -34,3 +34,22 @@ def save_authors_games
   end
   File.write('json/games.json', JSON.pretty_generate(updated_data))
 end
+
+def save_music_albums
+  file_path = 'json/music_albums.json'
+  if File.exist?(file_path)
+    JSON.parse(File.read(file_path))
+  else
+    []
+  end
+  updated_data = @genres.map do |album|
+    related_items = album.items.map do |album_item|
+      {
+        'publish date': album_item.publish_date,
+        'on spotify': album_item.on_spotify
+      }
+    end
+    { id: album.id, genre: album.name, items: related_items }
+  end
+  File.write('json/music_albums.json', JSON.pretty_generate(updated_data))
+end
