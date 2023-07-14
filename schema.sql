@@ -1,4 +1,4 @@
-CREATE DATABASE catalogies
+CREATE DATABASE catalogs
 
 --label schema
 CREATE TABLE labels (
