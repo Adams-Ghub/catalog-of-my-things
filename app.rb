@@ -6,10 +6,11 @@ require_relative 'book'
 require_relative 'label'
 require_relative 'save'
 require_relative 'load'
+require_relative 'create_elements'
 require 'json'
 
-
 class App
+  include CreateElements
   def initialize
     @games = []
     @authors = []
@@ -17,7 +18,6 @@ class App
     @genres = []
     @books = []
     @labels = []
-
   end
 
   def load
@@ -34,42 +34,22 @@ class App
   def create_book
     publisher = ''
     cover_state = ''
-
+    label = create_label
     loop do
       print 'Enter a book publisher:'
       publisher = gets.chomp
       break unless publisher.empty?
     end
-
     loop do
       print 'Enter Cover state:'
       cover_state = gets.chomp
       break unless cover_state.empty?
     end
-
     published_date = get_date_input('Enter published date [YYYY-MM-DD]')
-
-    @books << Book.new(publisher, cover_state, published_date)
+    my_book = Book.new(publisher, cover_state, published_date)
+    @books << my_book
+    @labels << label.add_item(my_book)
     puts "\nBook is created successfully\n\n"
-  end
-
-  def create_label
-    title = ''
-    color = ''
-
-    loop do
-      print 'Enter a book title:'
-      title = gets.chomp
-      break unless title.empty?
-    end
-
-    loop do
-      print 'Enter label color:'
-      color = gets.chomp
-      break unless color.empty?
-    end
-    @labels << Label.new(title, color)
-    puts "\nLabel is created successfully\n\n"
   end
 
   def list_all_genres
@@ -94,42 +74,10 @@ class App
     end
   end
 
-  def create_author
-    first_name = ''
-    last_name = ''
-    loop do
-      puts "Enter author's first name:"
-      first_name = gets.chomp
-      break unless first_name == ''
-
-      puts 'first name is required'
-    end
-    loop do
-      puts "Enter author's last name:"
-      last_name = gets.chomp
-      break unless last_name == ''
-
-      puts 'last name is required'
-    end
-    @authors << Author.new(first_name, last_name)
-  end
-
-  def create_genre
-    genre = ''
-    loop do
-      puts 'Enter the genre name:'
-      genre = gets.chomp
-      break unless genre == ''
-
-      puts 'genre name is required'
-    end
-    Genre.new(genre)
-  end
-
   def create_game
     multiplayer_input = ''
+    author = create_author
     published_date = get_date_input('Enter published date [YYYY-MM-DD]')
-
     loop do
       puts 'Is game multipayer enabled? [Y]/[N]'
       multiplayer_input = gets.chomp
@@ -137,12 +85,12 @@ class App
 
       puts 'incorrect input'
     end
-
     last_played = get_date_input('Enter last played date [YYYY-MM-DD]')
     multiplayer_input = multiplayer_input == 'y'
-
-    @games << Game.new(published_date, multiplayer_input, last_played)
-    puts 'Game created successfully'
+    game = Game.new(published_date, multiplayer_input, last_played)
+    @authors << author.add_item(game)
+    @games << game
+    puts "Game created successfully \n \n"
   end
 
   def create_music_album
@@ -167,25 +115,13 @@ class App
     puts 'Music Album created successfully'
   end
 
-  def get_date_input(text)
-    date_input = ''
-    loop do
-      print text
-      date_input = gets.chomp
-      break if date_input =~ /^\d{4}-\d{2}-\d{2}$/
-
-      puts 'Date format incorrect'
-    end
-    date_input
-  end
-
   def list_all_books
     if @books.empty?
       puts 'No Book available'
     else
       @books.each_with_index do |book, index|
-        puts "[#{index + 1}] Publisher: #{book.publisher}, Cover_state :#{book.cover_state}\
-        , Published Date:#{book.publish_date}"
+        puts "[#{index + 1}] Publisher: #{book.publisher},\
+         Cover_state :#{book.cover_state}, Published Date:#{book.publish_date}"
       end
     end
   end
@@ -222,23 +158,16 @@ class App
   end
 
   def executors(choice)
-
     actions = {
-      1 => method(:list_all_games),
-      3 => method(:list_all_music_albums),
-      5 => method(:list_all_genres),
-      7 => method(:list_all_authors),
-      10 => method(:create_author),
-      11 => method(:create_music_album),
-      13 => method(:create_game)
+      1 => method(:list_all_games), 2 => method(:list_all_books), 3 => method(:list_all_music_albums),
+      4 => method(:list_all_genres), 5 => method(:list_all_labels), 6 => method(:list_all_authors),
+      7 => method(:create_book), 8 => method(:create_music_album), 9 => method(:create_game)
     }
-
     action = actions[choice]
     if action
       action.call
     else
       puts 'Invalid choice.'
-
     end
   end
 end
