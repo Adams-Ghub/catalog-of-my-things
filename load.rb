@@ -23,3 +23,19 @@ def load_labels
     @labels << Label.new(label['title'], label['color'])
   end
 end
+
+def load_authors_games
+  return unless File.exist?('json/authors.json')
+
+  json_authors = JSON.parse(File.read('json/authors.json'))
+
+  json_authors.each do |author|
+    new_author = Author.new(author['author'][0]['first name'], author['author'][0]['last name'])
+    new_game = Game.new(author['items'][0]['publish_date'], author['items'][0]['multiplayer'],
+                        author['items'][0]['last_played_at'])
+    new_author.add_item(new_game)
+
+    @authors << new_author
+    @games << new_game
+  end
+end

@@ -24,11 +24,13 @@ class App
   def load
     load_books
     load_labels
+    load_authors_games
   end
 
   def save(_data)
     save_books
     save_label
+    save_authors_games
     puts 'You Quited'
   end
 
