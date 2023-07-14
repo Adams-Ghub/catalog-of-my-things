@@ -3,11 +3,12 @@ CREATE TABLE music_albums (
   id SERIAL PRIMARY KEY,
   publish_date DATE NOT NULL,
   archived BOOLEAN NOT NULL,
+  on_spotify BOOLEAN NOT NULL
+  
   author_id INTEGER REFERENCES authors (id),
   genre_id INTEGER REFERENCES genres (id),
   source_id INTEGER REFERENCES sources(id),
   label_id INTEGER REFERENCES labels (id),
-  on_spotify BOOLEAN NOT NULL
 );
 
 -- Table: genres
