@@ -27,7 +27,11 @@ p
 
 # 📖 Catalogue of my Things  <a name="about-project"></a>
 
-> Coming soon
+> **Catalogue of my Things:**  is a console app that will help you to keep a record of different types of things you own: books, music albums, movies, and games. Everything will be based on the UML class diagram presented below. The data will be stored in JSON files. There is also a database with tables structure analogical to the presented program's class structure.
+
+Here is the UML diagram:
+
+![Class diagram](catalog_of_my_things.png)
 
 ## 🛠 Built With <a name="built-with"></a>
 ### Tech Stack <a name="tech-stack"></a>
@@ -43,10 +47,9 @@ p
 
 ### Key Features <a name="key-features"></a>
 
-- **[Coming soon]**
-- **[Coming soon]**
-- **[Coming soon]**
-- **[Coming soon]**
+- **[ Add a book ]**
+- **[ Add a music album ]**
+- **[ Add a game ]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -80,7 +83,7 @@ To run the project, execute the following command:
 
 
 ```sh
-  irb
+  ruby main.rb
 ```
 
 ### Run tests
@@ -88,7 +91,7 @@ To run the project, execute the following command:
 To run tests, run the following command:
 
 ```sh
-  run rubocop
+  rspec
 ```
 ## 👥 Authors <a name="authors"></a>
 
@@ -113,7 +116,7 @@ To run tests, run the following command:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **[Add Best UI]**
+- [ ] **[Improve the UI]**
 
 
 <## 🤝 Contributing <a name="contributing"></a>
