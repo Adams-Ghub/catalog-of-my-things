@@ -1,15 +1,23 @@
--- Table structure for music_albums
+-- Table: music_albums
 CREATE TABLE music_albums (
-  id INT PRIMARY KEY,
-  name VARCHAR(255),
-  publish_date DATE,
-  genre_id INT,
-  on_spotify BOOLEAN,
-  FOREIGN KEY (genre_id) REFERENCES genres(id)
+  id SERIAL PRIMARY KEY,
+  publish_date DATE NOT NULL,
+  archived BOOLEAN NOT NULL,
+  author_id INTEGER REFERENCES authors (id),
+  source VARCHAR(255),
+  label_id INTEGER REFERENCES labels (id),
+  on_spotify BOOLEAN NOT NULL
 );
 
--- Table structure for genres
+-- Table: genres
 CREATE TABLE genres (
-  id INT PRIMARY KEY,
-  name VARCHAR(255)
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(255) NOT NULL
+);
+
+-- Table: items_genres
+CREATE TABLE items_genres (
+  item_id INTEGER REFERENCES music_albums (id),
+  genre_id INTEGER REFERENCES genres (id),
+  PRIMARY KEY (item_id, genre_id)
 );
