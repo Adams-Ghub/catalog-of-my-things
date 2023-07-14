@@ -48,7 +48,8 @@ class App
     else
       @music_albums.each_with_index do |music_album, index|
         on_spotify = music_album.on_spotify ? 'Yes' : 'No'
-        puts "#{index + 1}) Published date: #{music_album.publish_date}      Is it on Spotify: #{on_spotify}     genre: #{music_album.genre.name}"
+        puts "#{index + 1}) Published date: #{music_album.publish_date}   \
+           Is it on Spotify: #{on_spotify}     genre: #{music_album.genre.name}"
       end
     end
   end
@@ -76,13 +77,13 @@ class App
   def create_genre
     genre = ''
     loop do
-      puts "Enter the genre name:"
+      puts 'Enter the genre name:'
       genre = gets.chomp
       break unless genre == ''
 
       puts 'genre name is required'
     end
-    new_genre = Genre.new(genre)
+    Genre.new(genre)
   end
 
   def create_game
@@ -139,21 +140,21 @@ class App
   end
 
   def executors(choice)
-    case choice
-    when 1
-      list_all_games
-    when 3
-      list_all_music_albums
-    when 5
-      list_all_genres
-    when 7
-      list_all_authors
-    when 10
-      create_author
-    when 11
-      create_music_album
-    when 13
-      create_game
+    actions = {
+      1 => method(:list_all_games),
+      3 => method(:list_all_music_albums),
+      5 => method(:list_all_genres),
+      7 => method(:list_all_authors),
+      10 => method(:create_author),
+      11 => method(:create_music_album),
+      13 => method(:create_game)
+    }
+
+    action = actions[choice]
+    if action
+      action.call
+    else
+      puts 'Invalid choice.'
     end
   end
 end
