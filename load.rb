@@ -25,9 +25,9 @@ def load_labels
 end
 
 def load_authors_games
-  return unless File.exist?('json/authors.json')
+  return unless File.exist?('json/games.json')
 
-  json_authors = JSON.parse(File.read('json/authors.json'))
+  json_authors = JSON.parse(File.read('json/games.json'))
 
   json_authors.each do |author|
     new_author = Author.new(author['author'][0]['first name'], author['author'][0]['last name'])

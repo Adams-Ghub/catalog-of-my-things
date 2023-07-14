@@ -8,7 +8,6 @@ require_relative 'label'
 require_relative 'save'
 require_relative 'load'
 require_relative 'create_elements'
-require 'json'
 
 class App
   include CreateElements

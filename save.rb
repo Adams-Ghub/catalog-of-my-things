@@ -15,9 +15,8 @@ def save_label
   end
 end
 
-
 def save_authors_games
-  file_path = 'json/authors.json'
+  file_path = 'json/games.json'
   if File.exist?(file_path)
     JSON.parse(File.read(file_path))
   else
@@ -33,5 +32,5 @@ def save_authors_games
     author_arr = [{ 'first name': author.first_name, 'last name': author.last_name }]
     { id: author.id, author: author_arr, items: related_items }
   end
-  File.write('json/authors.json', JSON.pretty_generate(updated_data))
+  File.write('json/games.json', JSON.pretty_generate(updated_data))
 end
