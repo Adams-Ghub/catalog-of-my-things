@@ -1,5 +1,5 @@
 require_relative 'app'
-require_relative 'options'
+require_relative 'helpers/options'
 
 def main
   app = App.new

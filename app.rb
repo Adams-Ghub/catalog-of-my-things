@@ -1,13 +1,13 @@
 require 'json'
-require_relative 'game'
-require_relative 'author'
-require_relative 'music_album'
-require_relative 'genre'
-require_relative 'book'
-require_relative 'label'
-require_relative 'save'
-require_relative 'load'
-require_relative 'create_elements'
+require_relative 'classes/game'
+require_relative 'classes/author'
+require_relative 'classes/music_album'
+require_relative 'classes/genre'
+require_relative 'classes/book'
+require_relative 'classes/label'
+require_relative 'helpers/save'
+require_relative 'helpers/load'
+require_relative 'helpers/create_elements'
 
 class App
   include CreateElements
