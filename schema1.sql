@@ -3,7 +3,6 @@ CREATE TABLE labels (
     id INT GENERATED ALWAYS AS IDENTITY,
     title VARCHAR(50),
     color VARCHAR(50),
-    items ARRAY,
     PRIMARY KEY (id)
 );
 
@@ -15,6 +14,12 @@ CREATE TABLE books (
     publish_date DATE,
     archived BOOLEAN,
     label_id INT,
+    genre_id INT,
+    author_id INT,
+    source_id INT,
     FOREIGN KEY (label_id) REFERENCES labels(id),
+    FOREIGN KEY (genre_id) REFERENCES genres(id),
+    FOREIGN KEY (author_id) REFERENCES Author(id),
+    FOREIGN KEY (source_id) REFERENCES source(id),
     PRIMARY KEY (id)
 );
