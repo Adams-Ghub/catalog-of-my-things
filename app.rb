@@ -15,17 +15,15 @@ class App
   end
 
   def load
-    load_books  
+    load_books
     load_labels
   end
 
-  def save(data)
+  def save(_data)
     save_books
     save_label
-    puts "You Quited"
+    puts 'You Quited'
   end
-
-
 
   def create_book
     publisher = ''
@@ -175,5 +173,4 @@ class App
       create_label
     end
   end
-  
 end
