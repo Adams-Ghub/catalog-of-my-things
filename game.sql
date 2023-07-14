@@ -8,7 +8,7 @@ CREATE TABLE Game (
     genre_id INTEGER,
     author_id INTEGER,
     label_id INTEGER,
-    can_be_archived BOOLEAN,
+    archived BOOLEAN,
 
     FOREIGN KEY (genre_id) REFERENCES Genre(id),
     FOREIGN KEY (author_id) REFERENCES Author(id),
